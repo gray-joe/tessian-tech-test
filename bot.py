@@ -45,8 +45,8 @@ def conversationPersistence(conversation_id: Text,) -> Generator[Conversation, N
     # if old_conversation_events is None:
     # old_conversation_events = []
     conversation = Conversation(conversation_id, old_conversation_events)
-    yield conversation
     inmemory_storage[conversation_id] += conversation.new_events_dict()
+    yield conversation
 
 
 class ChuckNorrisBot:
